@@ -37,36 +37,51 @@ $inf-banner-background: #17193f
   font:
     size: 42px
     weight: 600
+  margin-bottom: 30px
 
 .inf-banner-subtitle
   font:
-    size: 30px
+    size: 21px
     weight: 300
   margin-bottom: 45px
+  color: rgba(#fff, 0.8)
 
 .inf-banner-btn-caption
   font:
-    size: 21px
+    size: 17px
     weight: 300
-  margin-top: 15px
+  margin-top: 30px
+  color: rgba(#fff, 0.7)
 
 .inf-banner-btn
   @extend .btn
   +button-variant(#333, $inf-brand-yellow, $inf-brand-yellow)
+  min-width: 200px
   padding: 15px 30px
-  margin: 15px 30px
+  margin: 15px 0
   font:
     size: 19px
     weight: 600
-  border-radius: 30px
+  border-radius: 0 30px 30px 0
   transform: translate3d(0, 0, 0)
   box-shadow: 0 10px 25px rgba(#000, 0)
   transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.5s ease, color 0.2s ease
   transition-delay: 0, 1s, 0, 0
+  &, &:hover, &:focus
+    border: none
   &:hover
     color: #000
-    transform: translate3d(0, -5px, 0)
-    background-color: adjust-hue($inf-brand-yellow, -10%)
+    //transform: translate3d(0, -5px, 0)
+    background-color: adjust-hue($inf-brand-yellow, 20%)
+    box-shadow: 0 10px 35px rgba(#000, 0.3)
+
+.inf-banner-btn--alt
+  @extend .inf-banner-btn
+  +button-variant(#333, adjust-hue($inf-brand-yellow, -10%), adjust-hue($inf-brand-yellow, -10%))
+  border-radius: 30px 0 0 30px
+  &:hover
+    color: #000
+    background-color: adjust-hue($inf-brand-yellow, -20%)
     box-shadow: 0 10px 35px rgba(#000, 0.3)
 
 .inf-banner
