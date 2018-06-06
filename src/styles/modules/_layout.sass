@@ -1,0 +1,85 @@
+$app-nav-height: 56px
+$app-content-menu-width: 300px
+
+.app-content
+  padding: $grid-gutter-width
+
+.app-nav
+  background-color: $c-gray-darker
+  color: #fff
+  +antialiased
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: $app-nav-height
+  z-index: 10
+
+.app-content
+  position: fixed
+  top: $app-nav-height
+  bottom: 0
+  left: 0
+  width: 100%
+
+.app-content__menu
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  width: $app-content-menu-width
+  overflow-y: auto
+  border-right: 1px solid rgba(#000, 0.1)
+
+.app-content__block
+  position: absolute
+  top: 0
+  bottom: 0
+  left: $app-content-menu-width
+  right: 0
+  overflow-y: auto
+  padding: $grid-gutter-width/2
+
+.app-content__block-wide
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  overflow-y: auto
+  padding: $grid-gutter-width/2
+
+.app-nav__item
+  display: inline-block
+  color: darken(#fff, 20%)
+  transition: color 0.2s ease, border 0.2s ease
+  border-bottom: 2px solid transparent
+  font:
+    size: 17px
+    weight: bold
+  padding: $grid-gutter-width/2
+  cursor: pointer
+  &, &:hover, &:focus
+    background: none
+    text-decoration: none
+  &:hover
+    color: #fff
+  &.active
+    &, &:hover, &:focus
+      color: $c-green
+      border-bottom-color: $c-green
+
+.app-nav__logo-link
+  display: inline-block
+  padding: 10px 0
+  margin-right: $grid-gutter-width
+  opacity: 0.8
+  transition: opacity 0.2s ease
+  &:hover
+    opacity: 1
+
+.app-nav__logo
+  display: inline-block
+  height: 35px
+  max-width: 100%
+

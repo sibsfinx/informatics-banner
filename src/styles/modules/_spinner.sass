@@ -1,0 +1,11 @@
+.app-spinner-block
+  position: fixed
+  top: 50%
+  left: 50%
+  margin:
+    top: -$grid-gutter-width/2
+    left: -$grid-gutter-width/2
+  z-index: 100
+
+.app-spinner
+  +spinner($grid-gutter-width, 3px solid $c-green, .7s)

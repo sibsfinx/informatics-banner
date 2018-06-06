@@ -1,0 +1,19 @@
+.clients-list__item-link
+  display: block
+  color: $text-color
+  border-bottom: 1px solid rgba(#000, 0.1)
+  transition: color 0.2s ease, border 0.2s ease
+  padding: $grid-gutter-width/2
+  &, &:hover, &:focus, &:visited
+    text-decoration: none
+  &:hover
+    color: darken($c-green, 10%)
+    border-bottom-color: $c-green
+  &.active
+    &, &:hover, &:focus, &:visited
+      color: darken($c-green, 10%)
+      border-bottom-color: rgba($c-green, 0.3)
+      background-color: rgba($c-green, 0.1)
+
+
+

@@ -1,0 +1,57 @@
+@keyframes star
+  0%
+    opacity: 0
+  50%
+    opacity: 1
+  100%
+    opacity: 0
+
+@keyframes star-glow
+  0%
+    opacity: 0.5
+  50%
+    opacity: 1
+  100%
+    opacity: 0.5
+
+@keyframes space-rotate
+  0%
+    transform: rotate3d(0, 0, 1, 0deg)
+  50%
+    transform: rotate3d(0, 0, 1, 180deg)
+  100%
+    transform: rotate3d(0, 0, 1, 360deg)
+
+@keyframes bg-rotate
+  0%
+    transform: rotate3d(0, 0, 1, 0deg)
+    transform-origin: 50% 50%
+  50%
+    transform: rotate3d(0, 0, 1, 180deg)
+    transform-origin: 45% 55%
+  100%
+    transform: rotate3d(0, 0, 1, 360deg)
+    transform-origin: 50% 50%
+
+@keyframes meteor
+  0%
+    transform: translate3d(-1000px, -1000px, 0)
+    opacity: 0.5
+  100%
+    transform: translate3d(1000px, 1000px, 0)
+    opacity: 1
+
+//$st-count: 20
+//@while $st-count > 0
+//  //@keyframes st-item-#{$st-count}
+//    0%
+//      opacity: 0
+//    50%
+//      opacity: 1
+//    100%
+//      opacity: 0
+//  .inf-banner
+//    .st#{$st-count}
+//      animation: star-glow #{3*random(5)}s infinite ease-in
+//      animation-delay: #{#st-count}s
+//  $st-count: $st-count - 1
