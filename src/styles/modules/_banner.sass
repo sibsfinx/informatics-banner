@@ -79,11 +79,8 @@ $inf-banner-background: #17193f
 
   [id*="background-layer"]
     display: none
-  [id*="star-"]
-    transform: translate3d(0,0,0)
-    animation: star 5s infinite
   [id*="sun"]
-    animation: space-rotate 40s infinite cubic-bezier(.41,.42,.69,.58) // infinite ease // cubic-bezier(.07,.48,.88,.33)
+    animation: space-rotate 100s infinite cubic-bezier(.41,.42,.69,.58) // infinite ease // cubic-bezier(.07,.48,.88,.33)
     transform-origin: 30% 70%
   [id*="planet"]
     animation: space-rotate 240s infinite cubic-bezier(.48,.36,.52,.66) // cubic-bezier(.41,.42,.69,.58) // infinite ease // cubic-bezier(.07,.48,.88,.33)
@@ -92,10 +89,21 @@ $inf-banner-background: #17193f
     animation: bg-rotate 120s infinite cubic-bezier(.5,.3,.57,.78)
   [id*="meteor"]
     //transform: translate3d(500px, 500px, 0)
-    animation: meteor 3s infinite ease-out
+    animation: meteor 2s infinite ease-out
+
   $meteor-count: 10
   @while $meteor-count > 0
-    line[id*="meteor_#{$meteor-count}"]
-      animation-delay: #{20*$meteor-count}s
+    [id*="meteor_#{$meteor-count}"]
+      animation-delay: #{10*$meteor-count}s
     $meteor-count: $meteor-count - 1
+
+  [id*="star-"]
+    transform: translate3d(0,0,0)
+    animation: star 2s infinite
+
+  $star-count: 20
+  @while $star-count > 0
+    [id*="star"].st#{$star-count}
+      animation-delay: #{3*$star-count}s
+    $star-count: $star-count - 1
 
