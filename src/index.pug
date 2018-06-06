@@ -1,9 +1,6 @@
 extends _layouts/application
 
 block content
-  //#app
-    .app-spinner-block
-      .app-spinner
   .container
     .content-block
     .content-block
@@ -16,9 +13,15 @@ block content
     .inf-banner-block
       .inf-banner-content
         .content-block
-          h1.inf-banner-title Образование будущего
-          h2.inf-banner-subtitle Теперь по всему миру
-        a.inf-banner-btn Записаться
+          h1.inf-banner-title
+            | Проверь свои знания &mdash; приходи на экзамен!
+        a.inf-banner-btn
+          | Очная форма
+        a.inf-banner-btn
+          | Онлайн
+        h2.inf-banner-btn-caption
+          | Решать тебе &mdash; где и как учиться!
+
       .inf-banner
         include banner.html
 

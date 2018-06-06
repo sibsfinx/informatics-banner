@@ -29,7 +29,8 @@ $inf-banner-background: #17193f
   z-index: 12
   color: #fff
   text-align: center
-  padding-top: 60px
+  padding-top: 120px
+  padding-top: 10vh
   -webkit-font-smoothing: antialiased
 
 .inf-banner-title
@@ -40,13 +41,20 @@ $inf-banner-background: #17193f
 .inf-banner-subtitle
   font:
     size: 30px
-    weight: 600
+    weight: 300
   margin-bottom: 45px
+
+.inf-banner-btn-caption
+  font:
+    size: 21px
+    weight: 300
+  margin-top: 15px
 
 .inf-banner-btn
   @extend .btn
   +button-variant(#333, $inf-brand-yellow, $inf-brand-yellow)
   padding: 15px 30px
+  margin: 15px 30px
   font:
     size: 19px
     weight: 600
