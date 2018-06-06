@@ -11,11 +11,14 @@ $inf-brand-blue: #1897d4
 $inf-brand-yellow: #fedd32
 $inf-banner-background: #17193f
 
+
 .inf-banner-container
   background:
     color: $inf-banner-background
     //image: linear-gradient(180deg, darken($inf-brand-blue,10%) 0%, darken($inf-brand-blue, 20%) 20%, $inf-banner-background 50%)
     image: linear-gradient(0deg, darken($inf-brand-blue,10%) 0%, $inf-banner-background 100%)
+  div
+    box-sizing: border-box
 
 .inf-banner-block
   position: relative
@@ -31,6 +34,9 @@ $inf-banner-background: #17193f
   text-align: center
   padding-top: 120px
   padding-top: 10vh
+  padding:
+    left: 30px
+    right: 30px
   -webkit-font-smoothing: antialiased
 
 .inf-banner-title
@@ -38,13 +44,18 @@ $inf-banner-background: #17193f
     size: 42px
     weight: 600
   margin-bottom: 30px
+  @media screen and (max-width: 480px)
+    font-size: 32px
 
 .inf-banner-subtitle
   font:
     size: 21px
     weight: 300
-  margin-bottom: 45px
+  margin-bottom: 75px
   color: rgba(#fff, 0.8)
+  @media screen and (max-width: 480px)
+    font-size: 17px
+    margin-bottom: 45px
 
 .inf-banner-btn-caption
   font:
@@ -54,7 +65,6 @@ $inf-banner-background: #17193f
   color: rgba(#fff, 0.7)
 
 .inf-banner-btn
-  @extend .btn
   +button-variant(#333, $inf-brand-yellow, $inf-brand-yellow)
   min-width: 200px
   padding: 15px 30px
@@ -63,17 +73,20 @@ $inf-banner-background: #17193f
     size: 19px
     weight: 600
   border-radius: 0 30px 30px 0
+  cursor: pointer
   transform: translate3d(0, 0, 0)
   box-shadow: 0 10px 25px rgba(#000, 0)
-  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.5s ease, color 0.2s ease
-  transition-delay: 0, 1s, 0, 0
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.5s ease, color 0.2s ease, border-radius 0.2s ease
+  transition-delay: 0, 1s, 0, 0, 0
   &, &:hover, &:focus
     border: none
   &:hover
     color: #000
     //transform: translate3d(0, -5px, 0)
-    background-color: adjust-hue($inf-brand-yellow, 20%)
+    //background-color: adjust-hue($inf-brand-yellow, -20%)
+    background-color: #fff
     box-shadow: 0 10px 35px rgba(#000, 0.3)
+    border-radius: 0
 
 .inf-banner-btn--alt
   @extend .inf-banner-btn
@@ -81,7 +94,9 @@ $inf-banner-background: #17193f
   border-radius: 30px 0 0 30px
   &:hover
     color: #000
-    background-color: adjust-hue($inf-brand-yellow, -20%)
+    //background-color: adjust-hue($inf-brand-yellow, -20%)
+    background-color: #fff
+    border-radius: 0
     box-shadow: 0 10px 35px rgba(#000, 0.3)
 
 .inf-banner

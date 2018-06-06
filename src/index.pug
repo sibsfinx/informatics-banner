@@ -1,29 +1,28 @@
 extends _layouts/application
 
 block content
-  .container
-    .content-block
-    .content-block
-      .row
-        .col-sm-4
-          a(href="")
-            img(src="./images/logo-inf.svg" width="200")
+  div(style="padding: 30px;")
+        a(href="")
+          img(src="./images/logo-inf.svg" width="200")
 
   .inf-banner-container
     .inf-banner-block
       .inf-banner-content
-        .content-block
-          h1.inf-banner-title
-            | Обучение программированию
-          h2.inf-banner-subtitle
-            | Дополнительное образование для учеников 3-11 классов
+        h1.inf-banner-title
+          | Обучение программированию
+        h2.inf-banner-subtitle
+          | Дополнительное образование для учеников 3-11 классов
         a.inf-banner-btn--alt
           | Очная форма
         a.inf-banner-btn
           | Онлайн
         //h2.inf-banner-btn-caption
           | Решать тебе &mdash; где и как учиться!
-
       .inf-banner
         include banner.html
+
+  br
+  br
+  code
+    include cssUrl.html
 
