@@ -2,12 +2,11 @@
 
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
+import ghPages from 'gulp-gh-pages';
 import pjson from './package.json';
 import minimist from 'minimist';
 import path from 'path';
-import awspublish from 'gulp-awspublish';
 import parallelize from 'concurrent-transform';
-import keys from './config/keys.js'
 
 // Load all gulp plugins based on their names
 // EX: gulp-copy -> copy
@@ -30,46 +29,6 @@ let publishers = {};
 // Default task
 gulp.task('default', [], () => {
 });
-
-publishers.production = awspublish.create({
-  region: keys.s3.production.region,
-  params: {
-    Bucket: keys.s3.production.bucket
-  },
-  accessKeyId: keys.s3.production.key,
-  secretAccessKey: keys.s3.production.secret
-});
-
-publishers.staging = awspublish.create({
-  region: keys.s3.staging.region,
-  params: {
-    Bucket: keys.s3.staging.bucket
-  },
-  accessKeyId: keys.s3.staging.key,
-  secretAccessKey: keys.s3.staging.secret
-});
-
-let upload = function (publisher) {
-  return gulp.src([
-    path.join(build, '**/*')
-  ])
-  .pipe(parallelize(publisher.publish(), threads))
-  // delete old files from the bucket
-  //.pipe(publisher.sync())
-  // create a cache file to speed up consecutive uploads
-  .pipe(publisher.cache())
-  // print upload updates to console
-  .on('error', function(err) {
-    plugins.util.log(
-      plugins.util.colors.red('s3 upload error:'),
-      '\n',
-      err,
-      '\n'
-    );
-    this.emit('end');
-  })
-  .pipe(awspublish.reporter());
-}
 
 gulp.task('ghPages', function() {
   return gulp.src([

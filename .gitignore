@@ -1,6 +1,7 @@
 # Config and credentials
 config/keys.js
 .awspublish-*
+.publish
 
 # Logs
 logs
