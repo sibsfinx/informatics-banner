@@ -36,13 +36,17 @@ export default {
       },
       inject: true
     }),
+    new ExtractTextPlugin({
+      filename: './styles/styles.css',
+      disable: true,
+    }),
     new webpack.LoaderOptionsPlugin({
       minimize: false,
       debug: true,
       noInfo: true, // set to false to see a list of every file being bundled.
       options: {
         sassLoader: {
-          includePaths: [path.resolve(__dirname, 'src', 'sass')]
+          includePaths: [path.resolve(__dirname, 'src', 'sass'), path.resolve(__dirname, 'src', 'styles')]
         },
         context: '/',
         postcss: () => [autoprefixer],

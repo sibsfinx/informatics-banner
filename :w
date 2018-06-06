@@ -75,10 +75,12 @@ export default {
         postcss: () => [autoprefixer],
       }
     }),
-    new ExtractTextPlugin({
-      filename: 'styles/styles.css',
-      allChunks: true
-    })
+    plugins: [
+      new ExtractTextPlugin({
+        filename: 'css/styles.css',
+        allChunks: true,
+      }),
+    ]
   ],
   module: {
     rules: [
@@ -89,17 +91,11 @@ export default {
       {test: /\.svg(\?v=\d+.\d+.\d+)?$/, loader: 'url-loader?limit=10000&mimetype=image/svg+xml&name=[name].[ext]'},
       {test: /\.(jpe?g|png|gif|ico|txt|csv)$/i, loader: 'file-loader?name=[name].[ext]'},
       //{test: /(\.css|\.scss|\.sass)$/, loader: ExtractTextPlugin.extract('css-loader?sourceMap!postcss-loader!sass-loader')},
-      // {test: /(\.css|\.scss|\.sass)$/,
-      //   loaders: ['style-loader', 'css-loader?sourceMap', 'postcss-loader', 'sass-loader?sourceMap']
-      //   // use: ExtractTextPlugin.extract({
-      //   //   fallback: "style-loader",
-      //   //   use: "css-loader"
-      //   // })
-      // },
-      {test: /(\.scss|\.sass)$/,
+      {test: /(\.css|\.scss|\.sass)$/,
+        loaders: ['style-loader', 'css-loader?sourceMap', 'postcss-loader', 'sass-loader?sourceMap'],
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
-          use: ['css-loader', 'postcss-loader', 'sass-loader']
+          use: "css-loader"
         })
       },
       {test: /\.pug$/, loader: "pug-loader"}
