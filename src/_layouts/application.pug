@@ -3,6 +3,7 @@ block config
   //- Setup site's base URL to match the "baseUrl" key within `package.json`
   //- Otherwise default to relative pathing
   - var baseUrl = './'
+  - var timestamp = Date.now()
 
 doctype html
 
@@ -21,7 +22,7 @@ head
   meta(name='viewport', content='width=device-width, initial-scale=1.0')
   //link(rel='apple-touch-icon', href= baseUrl + 'apple-touch-icon.png')
   block stylesheets
-    link(rel='stylesheet', href= baseUrl + 'styles/styles.css')
+    link(rel='stylesheet', href= baseUrl + 'styles/styles.css' + '?' + timestamp)
     link(href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic" rel="stylesheet")
 body
   <!--[if lt IE 9]>
