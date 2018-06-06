@@ -1,3 +1,3 @@
 export * from './common';
 
-export const API_URL = 'http://wecudos.local:3000/api/frontend';
+export const API_URL = 'http://informatics.local:3000/api/frontend';

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home = () => (
   <div>
-    Wecudos web app
+    Informatics web app
   </div>
 )
 
